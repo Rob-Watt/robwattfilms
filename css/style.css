@@ -306,7 +306,8 @@ main { padding: 8px var(--gutter) 64px; }
 }
 /* even out the visual weight of tall vs. wide logos */
 .prose .clients img[src*="amblin"],
-.prose .clients img[src*="hbo-max"] { height: 40px; }
+.prose .clients img[src*="hbo-max"],
+.prose .clients img[src*="caa-sports"] { height: 40px; }
 .prose .clients img[src*="subaru"],
 .prose .clients img[src*="boot-barn"] { height: 20px; }
 
