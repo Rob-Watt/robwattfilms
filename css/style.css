@@ -284,6 +284,32 @@ main { padding: 8px var(--gutter) 64px; }
 .meta-list span { color: var(--muted); }
 .meta-list a { overflow-wrap: anywhere; }
 
+/* Client logos */
+.clients {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: center;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.clients li { display: flex; align-items: center; justify-content: center; height: 48px; }
+.prose .clients img {
+  width: auto;
+  height: 28px;
+  max-width: 100%;
+  margin: 0;
+  object-fit: contain;
+  filter: brightness(0);
+  opacity: 0.55;
+}
+/* even out the visual weight of tall vs. wide logos */
+.prose .clients img[src*="amblin"],
+.prose .clients img[src*="hbo-max"] { height: 40px; }
+.prose .clients img[src*="subaru"],
+.prose .clients img[src*="boot-barn"] { height: 20px; }
+
 /* Journal list */
 .post-list { margin: 0; padding: 0; list-style: none; max-width: 760px; }
 .post-list li { border-top: 1px solid var(--line); }
