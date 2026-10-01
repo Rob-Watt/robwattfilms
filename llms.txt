@@ -1,0 +1,26 @@
+# Rob Watt Films
+
+> Rob Watt is a filmmaker and aerial cinematographer who directs feature films as well as commercials for major brands. He is also the creator of the Getting Made Podcast. This site is his portfolio and journal.
+
+Contact: rob@airwolfdrones.com
+Services: directing for feature films and commercials, producing, consulting
+
+## Work
+
+- [Home](https://robwattfilms.com/): landing page
+- [Aerial](https://robwattfilms.com/html/aerial.html): aerial and drone cinematography for commercials, films and brands
+- [Films](https://robwattfilms.com/html/films.html): narrative and documentary films
+
+## About
+
+- [About Rob Watt](https://robwattfilms.com/html/about.html): bio, services, contact details and FAQ
+
+## Journal
+
+- [Journal](https://robwattfilms.com/html/journal.html): notes from the great adventure
+- [Phedon Papamichael on the Getting Made Podcast](https://robwattfilms.com/html/journal/phedon-papamichael-getting-made-podcast.html): cinematographer Phedon Papamichael on Roger Corman, the studio system and shooting on film
+
+## Optional
+
+- [Vimeo](https://vimeo.com/solagratia): full video library
+- [Instagram](https://www.instagram.com/robwatt): stills and behind the scenes
