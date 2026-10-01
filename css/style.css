@@ -107,6 +107,33 @@ main { padding: 8px var(--gutter) 64px; }
   background: var(--tile-bg);
 }
 
+/* ---------- Single video page ---------- */
+.watch { max-width: 1200px; }
+
+.watch-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - 220px);
+  background: #000;
+}
+
+.watch h1 { font-size: 17px; margin: 20px 0 2px; }
+.watch-credit { margin: 0; color: var(--muted); }
+.watch-desc { max-width: 620px; margin: 16px 0 0; }
+
+.watch-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+.watch-nav a:hover { color: var(--ink); }
+
 /* ---------- Film posters ---------- */
 .posters {
   display: grid;

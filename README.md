@@ -16,6 +16,7 @@ robwattfilms/
 │   └── style.css         ← all styling; colours and fonts are at the top
 ├── html/
 │   ├── aerial.html       ← aerial video grid
+│   ├── aerial/           ← one page per aerial video (for Google video search)
 │   ├── films.html
 │   ├── about.html
 │   ├── journal.html      ← blog index
@@ -32,7 +33,7 @@ robwattfilms/
 
 ## Adding work
 
-Each project is a `<li>` block in `html/aerial.html`. Copy one and change:
+Each project is a `<li>` block in `html/aerial.html`, with its own page in `html/aerial/` and a `<video:video>` entry in `sitemap.xml`. Copy one and change:
 
 - `data-video` — a Vimeo or YouTube link, or a file in `/videos`
 - `data-title` / `data-credit` — shown under the player

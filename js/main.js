@@ -73,7 +73,12 @@
   }
 
   tiles.forEach(function (t, i) {
-    t.addEventListener('click', function () { open(i); });
+    t.addEventListener('click', function (e) {
+      // let cmd/ctrl/shift-click open the video's own page as normal
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      open(i);
+    });
   });
 
   box.querySelector('.lightbox-close').addEventListener('click', close);

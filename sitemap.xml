@@ -1,10 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Add a <url> entry for every new page or journal post. -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url><loc>https://robwattfilms.com/</loc><lastmod>2026-10-01</lastmod></url>
   <url><loc>https://robwattfilms.com/html/aerial.html</loc><lastmod>2026-10-01</lastmod></url>
   <url><loc>https://robwattfilms.com/html/films.html</loc><lastmod>2026-10-01</lastmod></url>
   <url><loc>https://robwattfilms.com/html/about.html</loc><lastmod>2026-10-01</lastmod></url>
   <url><loc>https://robwattfilms.com/html/journal.html</loc><lastmod>2026-10-01</lastmod></url>
   <url><loc>https://robwattfilms.com/html/journal/phedon-papamichael-getting-made-podcast.html</loc><lastmod>2026-10-01</lastmod></url>
+  <url>
+    <loc>https://robwattfilms.com/html/aerial/boot-barn-dallas.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://robwattfilms.com/images/stills/boot-barn-dallas.jpg</video:thumbnail_loc>
+      <video:title>Boot Barn — Dallas</video:title>
+      <video:description>Aerial cinematography for Boot Barn&#x27;s Dallas spot: horses and riders racing across open range at sunset.</video:description>
+      <video:content_loc>https://robwattfilms.com/videos/Bootbarn%20Dallas.mov</video:content_loc>
+      <video:duration>29</video:duration>
+      <video:publication_date>2026-09-30</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://robwattfilms.com/html/aerial/beneath-the-mountain.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://robwattfilms.com/images/stills/beneath-the-mountain.jpg</video:thumbnail_loc>
+      <video:title>Beneath the Mountain — Vermont Danby Quarry</video:title>
+      <video:description>Aerial cinematography for Beneath the Mountain, a short film inside the Danby marble quarry in Vermont.</video:description>
+      <video:content_loc>https://robwattfilms.com/videos/Beneath%20the%20Mountain_%20Vermont%20Danby%20Quarry.mp4</video:content_loc>
+      <video:duration>77</video:duration>
+      <video:publication_date>2026-09-30</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://robwattfilms.com/html/aerial/boot-barn-usa-250.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://robwattfilms.com/images/stills/boot-barn-usa-250.jpg</video:thumbnail_loc>
+      <video:title>Boot Barn — USA 250</video:title>
+      <video:description>Aerial cinematography for Boot Barn&#x27;s USA 250 campaign: a herd of horses galloping beneath mountain peaks.</video:description>
+      <video:content_loc>https://robwattfilms.com/videos/USA250bootbarn.mp4</video:content_loc>
+      <video:duration>83</video:duration>
+      <video:publication_date>2026-09-30</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://robwattfilms.com/html/aerial/boot-barn-wheels-off.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://robwattfilms.com/images/stills/boot-barn-wheels-off.jpg</video:thumbnail_loc>
+      <video:title>Boot Barn — Wheels Off</video:title>
+      <video:description>Aerial cinematography for Boot Barn&#x27;s Wheels Off spot: mud, monster trucks and a day off the pavement.</video:description>
+      <video:content_loc>https://robwattfilms.com/videos/Bootbarn%20Wheels%20Off.mp4</video:content_loc>
+      <video:duration>95</video:duration>
+      <video:publication_date>2026-09-30</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://robwattfilms.com/html/aerial/boot-barn-westward-marfa.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://robwattfilms.com/images/stills/boot-barn-westward-marfa.jpg</video:thumbnail_loc>
+      <video:title>Boot Barn — Westward, Marfa</video:title>
+      <video:description>Aerial cinematography for Boot Barn&#x27;s Westward campaign, filmed in Marfa, Texas.</video:description>
+      <video:content_loc>https://robwattfilms.com/videos/BB_westward_Marfa.mp4</video:content_loc>
+      <video:duration>87</video:duration>
+      <video:publication_date>2026-09-30</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://robwattfilms.com/html/aerial/boot-barn-higher-ground.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://robwattfilms.com/images/stills/boot-barn-higher-ground.jpg</video:thumbnail_loc>
+      <video:title>Boot Barn — Higher Ground</video:title>
+      <video:description>Aerial cinematography for Boot Barn&#x27;s Higher Ground spot: a helicopter crew at work among high-voltage towers.</video:description>
+      <video:content_loc>https://robwattfilms.com/videos/bootbarn%20higher%20ground%203.mp4</video:content_loc>
+      <video:duration>128</video:duration>
+      <video:publication_date>2026-09-30</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://robwattfilms.com/html/aerial/boot-barn-trick-rider.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://robwattfilms.com/images/stills/boot-barn-trick-rider.jpg</video:thumbnail_loc>
+      <video:title>Boot Barn — Trick Rider</video:title>
+      <video:description>Aerial cinematography for Boot Barn: a trick rider at full gallop.</video:description>
+      <video:content_loc>https://robwattfilms.com/videos/Bootbarn%20trickrider%203.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:publication_date>2026-09-30</video:publication_date>
+    </video:video>
+  </url>
 </urlset>
