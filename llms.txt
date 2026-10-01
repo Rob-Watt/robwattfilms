@@ -10,7 +10,7 @@ Clients: Amblin Entertainment, Netflix, Hulu, Subaru, Boot Barn, HBO Max, Amazon
 
 - [Home](https://robwattfilms.com/): landing page
 - [Aerial](https://robwattfilms.com/html/aerial.html): aerial and drone cinematography for commercials, films and brands
-  - [Boot Barn — Dallas](https://robwattfilms.com/html/aerial/boot-barn-dallas.html): Aerial cinematography for Boot Barn's Dallas spot: horses and riders racing across open range at sunset.
+  - [Boot Barn — Dallas](https://robwattfilms.com/html/aerial/boot-barn-dallas.html): Escape the city and Rodeo from above
   - [Beneath the Mountain — Vermont Danby Quarry](https://robwattfilms.com/html/aerial/beneath-the-mountain.html): Aerial cinematography for Beneath the Mountain, a short film inside the Danby marble quarry in Vermont.
   - [Boot Barn — USA 250](https://robwattfilms.com/html/aerial/boot-barn-usa-250.html): Aerial cinematography for Boot Barn's USA 250 campaign: a herd of horses galloping beneath mountain peaks.
   - [Boot Barn — Wheels Off](https://robwattfilms.com/html/aerial/boot-barn-wheels-off.html): Aerial cinematography for Boot Barn's Wheels Off spot: mud, monster trucks and a day off the pavement.
