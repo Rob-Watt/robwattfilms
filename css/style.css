@@ -274,8 +274,15 @@ main { padding: 8px var(--gutter) 64px; }
 .about-photo img { display: block; width: 100%; height: auto; }
 
 .meta-list { margin: 32px 0 0; padding: 0; list-style: none; }
-.meta-list li { padding: 8px 0; border-top: 1px solid var(--line); }
-.meta-list span { display: inline-block; min-width: 110px; color: var(--muted); }
+.meta-list li {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 0 8px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+}
+.meta-list span { color: var(--muted); }
+.meta-list a { overflow-wrap: anywhere; }
 
 /* Journal list */
 .post-list { margin: 0; padding: 0; list-style: none; max-width: 760px; }
