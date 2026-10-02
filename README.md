@@ -6,7 +6,7 @@ Portfolio site for Rob Watt — filmmaker & aerial cinematographer. Plain HTML/C
 
 ```
 robwattfilms/
-├── index.html            ← home / landing page (must stay at the root for GitHub Pages)
+├── index.html            ← home: autoplaying reel (must stay at the root for GitHub Pages)
 ├── 404.html              ← not-found page
 ├── CNAME                 ← tells GitHub Pages to serve at robwattfilms.com
 ├── robots.txt            ← lets search engines crawl

@@ -30,7 +30,10 @@
         "name": "Rob Watt",
         "url": "https://robwattfilms.com/",
         "image": "https://robwattfilms.com/images/rob-watt.jpg",
-        "jobTitle": ["Filmmaker", "Aerial Cinematographer"],
+        "jobTitle": [
+          "Filmmaker",
+          "Aerial Cinematographer"
+        ],
         "description": "Rob Watt is a filmmaker and aerial cinematographer, and host of the Getting Made Podcast.",
         "sameAs": [
           "https://vimeo.com/solagratia",
@@ -43,7 +46,21 @@
         "@id": "https://robwattfilms.com/#site",
         "url": "https://robwattfilms.com/",
         "name": "Rob Watt Films",
-        "publisher": { "@id": "https://robwattfilms.com/#rob" }
+        "publisher": {
+          "@id": "https://robwattfilms.com/#rob"
+        }
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Rob Watt Films Reel",
+        "description": "Reel of directing and aerial cinematography by Rob Watt, including work for Boot Barn and HAWX.",
+        "thumbnailUrl": "https://robwattfilms.com/images/reel-poster.jpg",
+        "uploadDate": "2026-10-01",
+        "duration": "PT2M5S",
+        "contentUrl": "https://robwattfilms.com/videos/reel-1080.mp4",
+        "creator": {
+          "@id": "https://robwattfilms.com/#rob"
+        }
       }
     ]
   }
@@ -68,9 +85,12 @@
     <h1 class="visually-hidden">Rob Watt — filmmaker</h1>
 
     <section class="landing">
-      <!-- Swap this photo for the reel when it's ready. -->
+      <!-- Reel: muted autoplay loop. Phones get the 720p file, everything else 1080p. -->
       <div class="landing-media">
-        <img src="images/landing.jpg" alt="Rob Watt filming actress Jennifer Michele De Winter on the set of Consumers, black and white" width="2000" height="1333">
+        <video class="landing-video" autoplay muted loop playsinline preload="auto" poster="images/reel-poster.jpg" aria-label="Rob Watt Films reel">
+          <source src="videos/reel-720.mp4" type="video/mp4" media="(max-width: 800px)">
+          <source src="videos/reel-1080.mp4" type="video/mp4">
+        </video>
       </div>
     </section>
   </main>

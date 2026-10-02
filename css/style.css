@@ -97,14 +97,14 @@ main { padding: 8px var(--gutter) 64px; }
 /* ---------- Landing page ---------- */
 .landing { display: grid; gap: clamp(24px, 4vw, 48px); }
 
-.landing-media img {
+.landing-media img,
+.landing-media video {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   max-height: calc(100vh - 180px);
   object-fit: cover;
-  object-position: 50% 15%; /* keep Rob's head and the camera rig in frame */
-  background: var(--tile-bg);
+  background: #000;
 }
 
 /* ---------- Single video page ---------- */

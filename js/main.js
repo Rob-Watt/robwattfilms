@@ -14,6 +14,14 @@
     });
   }
 
+  // Respect "reduce motion": don't autoplay the reel
+  var reel = document.querySelector('.landing-video');
+  if (reel && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    reel.removeAttribute('autoplay');
+    reel.pause();
+    reel.controls = true;
+  }
+
   // ---------- 2. Lightbox ----------
   var tiles = Array.prototype.slice.call(document.querySelectorAll('.tile[data-video]'));
   var box = document.querySelector('.lightbox');

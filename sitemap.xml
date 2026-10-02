@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Add a <url> entry for every new page or journal post. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-  <url><loc>https://robwattfilms.com/</loc><lastmod>2026-10-01</lastmod></url>
+  <url>
+    <loc>https://robwattfilms.com/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://robwattfilms.com/images/reel-poster.jpg</video:thumbnail_loc>
+      <video:title>Rob Watt Films Reel</video:title>
+      <video:description>Reel of directing and aerial cinematography by Rob Watt, including work for Boot Barn and HAWX.</video:description>
+      <video:content_loc>https://robwattfilms.com/videos/reel-1080.mp4</video:content_loc>
+      <video:duration>125</video:duration>
+      <video:publication_date>2026-10-01</video:publication_date>
+    </video:video>
+  </url>
   <url><loc>https://robwattfilms.com/html/aerial.html</loc><lastmod>2026-10-01</lastmod></url>
   <url><loc>https://robwattfilms.com/html/films.html</loc><lastmod>2026-10-01</lastmod></url>
   <url><loc>https://robwattfilms.com/html/about.html</loc><lastmod>2026-10-01</lastmod></url>
