@@ -139,6 +139,7 @@ main { padding: 8px var(--gutter) 64px; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
+  align-items: end; /* posters keep their own shape; titles line up */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -148,8 +149,6 @@ main { padding: 8px var(--gutter) 64px; }
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
   background: var(--tile-bg);
 }
 
