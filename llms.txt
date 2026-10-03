@@ -10,6 +10,7 @@ Clients: Amblin Entertainment, Netflix, Hulu, Subaru, Boot Barn, HBO Max, Amazon
 
 - [Home](https://robwattfilms.com/): Rob Watt Films reel
 - [Aerial](https://robwattfilms.com/html/aerial.html): aerial and drone cinematography for commercials, films and brands
+  - [LMU — Ignite a Brighter World](https://robwattfilms.com/html/aerial/lmu-ignite-a-brighter-world.html): Aerial cinematography for Loyola Marymount University's Ignite a Brighter World campaign, filmed across LMU's campus on the bluff above Los Angeles.
   - [Boot Barn — Dallas](https://robwattfilms.com/html/aerial/boot-barn-dallas.html): Escape the city and Rodeo from above
   - [Beneath the Mountain — Vermont Danby Quarry](https://robwattfilms.com/html/aerial/beneath-the-mountain.html): Aerial cinematography for Beneath the Mountain, a short film inside the Danby marble quarry in Vermont.
   - [Boot Barn — USA 250](https://robwattfilms.com/html/aerial/boot-barn-usa-250.html): Aerial cinematography for Boot Barn's USA 250 campaign: a herd of horses galloping beneath mountain peaks.
