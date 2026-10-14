@@ -9,27 +9,27 @@ Clients: Amblin Entertainment, Netflix, Hulu, Subaru, Boot Barn, HBO Max, Amazon
 ## Work
 
 - [Home](https://robwattfilms.com/): Rob Watt Films reel
-- [Aerial](https://robwattfilms.com/html/aerial.html): aerial and drone cinematography for commercials, films and brands
-  - [LMU — Ignite a Brighter World](https://robwattfilms.com/html/aerial/lmu-ignite-a-brighter-world.html): Aerial cinematography for Loyola Marymount University's Ignite a Brighter World campaign, filmed across LMU's campus on the bluff above Los Angeles.
-  - [Boot Barn — Dallas](https://robwattfilms.com/html/aerial/boot-barn-dallas.html): Escape the city and Rodeo from above
-  - [Beneath the Mountain — Vermont Danby Quarry](https://robwattfilms.com/html/aerial/beneath-the-mountain.html): Aerial cinematography for Beneath the Mountain, a short film inside the Danby marble quarry in Vermont.
-  - [Boot Barn — USA 250](https://robwattfilms.com/html/aerial/boot-barn-usa-250.html): Aerial cinematography for Boot Barn's USA 250 campaign: a herd of horses galloping beneath mountain peaks.
-  - [Boot Barn — Wheels Off](https://robwattfilms.com/html/aerial/boot-barn-wheels-off.html): Aerial cinematography for Boot Barn's Wheels Off spot: mud, monster trucks and a day off the pavement.
-  - [Boot Barn — Westward, Marfa](https://robwattfilms.com/html/aerial/boot-barn-westward-marfa.html): Aerial cinematography for Boot Barn's Westward campaign, filmed in Marfa, Texas.
-  - [HAWX Work Wear](https://robwattfilms.com/html/aerial/hawx-work-wear.html): Aerial cinematography for HAWX Work Wear: an off-road truck tearing across the desert badlands of Swing Arm City
-  - [Boot Barn — Higher Ground](https://robwattfilms.com/html/aerial/boot-barn-higher-ground.html): Aerial cinematography for Boot Barn's Higher Ground spot: a helicopter crew at work among high-voltage towers.
-  - [Boot Barn — Trick Rider](https://robwattfilms.com/html/aerial/boot-barn-trick-rider.html): Aerial cinematography for Boot Barn: a trick rider at full gallop.
-- [Films](https://robwattfilms.com/html/films.html): narrative and documentary films
+- [Aerial](https://robwattfilms.com/aerial/): aerial and drone cinematography for commercials, films and brands
+  - [LMU — Ignite a Brighter World](https://robwattfilms.com/aerial/lmu-ignite-a-brighter-world/): Aerial cinematography for Loyola Marymount University's Ignite a Brighter World campaign, filmed across LMU's campus on the bluff above Los Angeles.
+  - [Boot Barn — Dallas](https://robwattfilms.com/aerial/boot-barn-dallas/): Escape the city and Rodeo from above
+  - [Beneath the Mountain — Vermont Danby Quarry](https://robwattfilms.com/aerial/beneath-the-mountain/): Aerial cinematography for Beneath the Mountain, a short film inside the Danby marble quarry in Vermont.
+  - [Boot Barn — USA 250](https://robwattfilms.com/aerial/boot-barn-usa-250/): Aerial cinematography for Boot Barn's USA 250 campaign: a herd of horses galloping beneath mountain peaks.
+  - [Boot Barn — Wheels Off](https://robwattfilms.com/aerial/boot-barn-wheels-off/): Aerial cinematography for Boot Barn's Wheels Off spot: mud, monster trucks and a day off the pavement.
+  - [Boot Barn — Westward, Marfa](https://robwattfilms.com/aerial/boot-barn-westward-marfa/): Aerial cinematography for Boot Barn's Westward campaign, filmed in Marfa, Texas.
+  - [HAWX Work Wear](https://robwattfilms.com/aerial/hawx-work-wear/): Aerial cinematography for HAWX Work Wear: an off-road truck tearing across the desert badlands of Swing Arm City
+  - [Boot Barn — Higher Ground](https://robwattfilms.com/aerial/boot-barn-higher-ground/): Aerial cinematography for Boot Barn's Higher Ground spot: a helicopter crew at work among high-voltage towers.
+  - [Boot Barn — Trick Rider](https://robwattfilms.com/aerial/boot-barn-trick-rider/): Aerial cinematography for Boot Barn: a trick rider at full gallop.
+- [Films](https://robwattfilms.com/films/): narrative and documentary films
 
 ## About
 
-- [About Rob Watt](https://robwattfilms.com/html/about.html): bio, services, clients, contact details and FAQ
+- [About Rob Watt](https://robwattfilms.com/about/): bio, services, clients, contact details and FAQ
 
 ## Journal
 
-- [Journal](https://robwattfilms.com/html/journal.html): notes from the great adventure
-- [Tanya Lapointe and Denis Villeneuve meet Jason Pelsey](https://robwattfilms.com/html/journal/tanya-lapointe-and-denis-villeneuve-meet-jason-pelsey.html): The night that Tanya Lapointe and Denis Villeneuve met Jason Pelsey.
-- [Phedon Papamichael on the Getting Made Podcast](https://robwattfilms.com/html/journal/phedon-papamichael-getting-made-podcast.html): The Cinematographer of Ford v Ferrari and A Complete Unknown shares his incredible stories on graduating the Roger Corman farm, conquering the studio system, and filming more than forty films on celluloid and more than twenty films on digital.
+- [Journal](https://robwattfilms.com/journal/): notes from the great adventure
+- [Tanya Lapointe and Denis Villeneuve meet Jason Pelsey](https://robwattfilms.com/journal/tanya-lapointe-and-denis-villeneuve-meet-jason-pelsey/): The night that Tanya Lapointe and Denis Villeneuve met Jason Pelsey.
+- [Phedon Papamichael on the Getting Made Podcast](https://robwattfilms.com/journal/phedon-papamichael-getting-made-podcast/): The Cinematographer of Ford v Ferrari and A Complete Unknown shares his incredible stories on graduating the Roger Corman farm, conquering the studio system, and filming more than forty films on celluloid and more than twenty films on digital.
 
 ## Optional
 

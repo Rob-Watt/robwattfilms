@@ -13,14 +13,14 @@
       <video:publication_date>2026-10-01</video:publication_date>
     </video:video>
   </url>
-  <url><loc>https://robwattfilms.com/html/aerial.html</loc><lastmod>2026-10-01</lastmod></url>
-  <url><loc>https://robwattfilms.com/html/films.html</loc><lastmod>2026-10-01</lastmod></url>
-  <url><loc>https://robwattfilms.com/html/about.html</loc><lastmod>2026-10-01</lastmod></url>
-  <url><loc>https://robwattfilms.com/html/journal.html</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://robwattfilms.com/html/journal/tanya-lapointe-and-denis-villeneuve-meet-jason-pelsey.html</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://robwattfilms.com/html/journal/phedon-papamichael-getting-made-podcast.html</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://robwattfilms.com/aerial/</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://robwattfilms.com/films/</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://robwattfilms.com/about/</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://robwattfilms.com/journal/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://robwattfilms.com/journal/tanya-lapointe-and-denis-villeneuve-meet-jason-pelsey/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://robwattfilms.com/journal/phedon-papamichael-getting-made-podcast/</loc><lastmod>2026-10-01</lastmod></url>
   <url>
-    <loc>https://robwattfilms.com/html/aerial/lmu-ignite-a-brighter-world.html</loc>
+    <loc>https://robwattfilms.com/aerial/lmu-ignite-a-brighter-world/</loc>
     <lastmod>2026-10-03</lastmod>
     <video:video>
       <video:thumbnail_loc>https://robwattfilms.com/images/stills/lmu-ignite-a-brighter-world.jpg</video:thumbnail_loc>
@@ -32,7 +32,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://robwattfilms.com/html/aerial/boot-barn-dallas.html</loc>
+    <loc>https://robwattfilms.com/aerial/boot-barn-dallas/</loc>
     <lastmod>2026-10-01</lastmod>
     <video:video>
       <video:thumbnail_loc>https://robwattfilms.com/images/stills/boot-barn-dallas.jpg</video:thumbnail_loc>
@@ -44,7 +44,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://robwattfilms.com/html/aerial/beneath-the-mountain.html</loc>
+    <loc>https://robwattfilms.com/aerial/beneath-the-mountain/</loc>
     <lastmod>2026-10-01</lastmod>
     <video:video>
       <video:thumbnail_loc>https://robwattfilms.com/images/stills/beneath-the-mountain.jpg</video:thumbnail_loc>
@@ -56,7 +56,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://robwattfilms.com/html/aerial/boot-barn-usa-250.html</loc>
+    <loc>https://robwattfilms.com/aerial/boot-barn-usa-250/</loc>
     <lastmod>2026-10-01</lastmod>
     <video:video>
       <video:thumbnail_loc>https://robwattfilms.com/images/stills/boot-barn-usa-250.jpg</video:thumbnail_loc>
@@ -68,7 +68,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://robwattfilms.com/html/aerial/boot-barn-wheels-off.html</loc>
+    <loc>https://robwattfilms.com/aerial/boot-barn-wheels-off/</loc>
     <lastmod>2026-10-01</lastmod>
     <video:video>
       <video:thumbnail_loc>https://robwattfilms.com/images/stills/boot-barn-wheels-off.jpg</video:thumbnail_loc>
@@ -80,7 +80,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://robwattfilms.com/html/aerial/boot-barn-westward-marfa.html</loc>
+    <loc>https://robwattfilms.com/aerial/boot-barn-westward-marfa/</loc>
     <lastmod>2026-10-01</lastmod>
     <video:video>
       <video:thumbnail_loc>https://robwattfilms.com/images/stills/boot-barn-westward-marfa.jpg</video:thumbnail_loc>
@@ -92,7 +92,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://robwattfilms.com/html/aerial/hawx-work-wear.html</loc>
+    <loc>https://robwattfilms.com/aerial/hawx-work-wear/</loc>
     <lastmod>2026-10-01</lastmod>
     <video:video>
       <video:thumbnail_loc>https://robwattfilms.com/images/stills/hawx-work-wear.jpg</video:thumbnail_loc>
@@ -104,7 +104,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://robwattfilms.com/html/aerial/boot-barn-higher-ground.html</loc>
+    <loc>https://robwattfilms.com/aerial/boot-barn-higher-ground/</loc>
     <lastmod>2026-10-01</lastmod>
     <video:video>
       <video:thumbnail_loc>https://robwattfilms.com/images/stills/boot-barn-higher-ground.jpg</video:thumbnail_loc>
@@ -116,7 +116,7 @@
     </video:video>
   </url>
   <url>
-    <loc>https://robwattfilms.com/html/aerial/boot-barn-trick-rider.html</loc>
+    <loc>https://robwattfilms.com/aerial/boot-barn-trick-rider/</loc>
     <lastmod>2026-10-01</lastmod>
     <video:video>
       <video:thumbnail_loc>https://robwattfilms.com/images/stills/boot-barn-trick-rider.jpg</video:thumbnail_loc>

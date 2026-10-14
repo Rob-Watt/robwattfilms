@@ -14,14 +14,13 @@ robwattfilms/
 ├── llms.txt              ← plain-language site summary for AI assistants (update with new posts)
 ├── css/
 │   └── style.css         ← all styling; colours and fonts are at the top
-├── html/
-│   ├── aerial.html       ← aerial video grid
-│   ├── aerial/           ← one page per aerial video (for Google video search)
-│   ├── films.html
-│   ├── about.html
-│   ├── journal.html      ← blog index
-│   └── journal/
-│       └── phedon-papamichael-getting-made-podcast.html   ← duplicate this for each new post
+├── aerial/index.html     ← /aerial/ — aerial video grid
+│   └── <video-name>/index.html   ← /aerial/<video-name>/ — one page per video (for Google video search)
+├── films/index.html      ← /films/
+├── about/index.html      ← /about/
+├── journal/index.html    ← /journal/ — blog index
+│   └── <post-name>/index.html    ← /journal/<post-name>/ — duplicate a post folder for each new post
+├── html/                 ← redirect pages only: old /html/... addresses forward to the clean URLs
 ├── js/
 │   └── main.js           ← mobile menu + video lightbox
 ├── videos/             ← self-hosted video files
@@ -33,7 +32,7 @@ robwattfilms/
 
 ## Adding work
 
-Each project is a `<li>` block in `html/aerial.html`, with its own page in `html/aerial/` and a `<video:video>` entry in `sitemap.xml`. Copy one and change:
+Each project is a `<li>` block in `aerial/index.html`, with its own page in `aerial/<video-name>/index.html` and a `<video:video>` entry in `sitemap.xml`. Links use root paths (`/aerial/`, `/images/...`), so pages work at any folder depth. Copy one and change:
 
 - `data-video` — a Vimeo or YouTube link, or a file in `/videos`
 - `data-title` / `data-credit` — shown under the player
