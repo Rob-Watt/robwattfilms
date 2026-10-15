@@ -1,4 +1,7 @@
+# All search engines and AI crawlers are welcome.
 User-agent: *
 Allow: /
+# Forum search results: endless variations of the same content (already noindex)
+Disallow: /forum/search/
 
 Sitemap: https://robwattfilms.com/sitemap.xml
