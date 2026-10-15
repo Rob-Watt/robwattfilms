@@ -289,6 +289,54 @@
     return 'Something went wrong: ' + ((err && err.message) || 'please try again.');
   }
 
+  // Turn database errors from posting/editing into plain language
+  function dbError(err) {
+    if (!err) return '';
+    var m = String(err.message || '');
+    if (/posting too fast/i.test(m)) return 'You’re posting too fast. Please wait about 20 seconds and try again.';
+    if (/only moderators/i.test(m)) return 'Only moderators can do that.';
+    if (err.code === '42501' || /row-level security|permission denied/i.test(m))
+      return 'You don’t have permission to do that. Make sure you’re signed in — and the topic may be locked, or your account may be suspended.';
+    if (err.code === '23514' || /check constraint/i.test(m)) {
+      if (/title/i.test(m)) return 'Titles need to be 5–150 characters.';
+      if (/body/i.test(m)) return 'Posts need to be between 1 and 20,000 characters.';
+      if (/reason/i.test(m)) return 'Please give a reason of at least a few words (up to 1,000 characters).';
+      return 'That doesn’t meet the length rules. Please check and try again.';
+    }
+    if (err.code === 'PGRST116') return 'That couldn’t be saved — you can only edit your own posts.';
+    if (/failed to fetch|network/i.test(m)) return OFFLINE;
+    return 'Something went wrong: ' + (m || 'please try again.');
+  }
+
+  // Live "123 / 20,000" counter under a field; returns the counter element
+  function counter(field, max, min) {
+    var c = el('span', { class: 'forum-muted forum-counter', 'aria-live': 'off' });
+    function update() {
+      var n = field.value.trim().length;
+      c.textContent = n.toLocaleString() + ' / ' + max.toLocaleString();
+      c.classList.toggle('forum-attention', n > max || (min && n > 0 && n < min));
+    }
+    field.addEventListener('input', update);
+    update();
+    return c;
+  }
+
+  // Can the signed-in member post? Returns a reason string if not.
+  function postingBlocker(profile) {
+    if (!profile) return 'signin';
+    if (profile.is_banned) return 'banned';
+    if (needsUsername(profile)) return 'username';
+    return null;
+  }
+
+  // Short explanation + link shown where a posting form would be
+  function blockedNote(reason, profile, what) {
+    if (reason === 'signin') return el('p', { class: 'forum-msg forum-gate' }, [el('a', { href: loginHref() }, 'Sign in'), ' or ', el('a', { href: '/forum/login/#signup' }, 'create an account'), ' to ' + what + '.']);
+    if (reason === 'username') return el('p', { class: 'forum-msg forum-gate' }, [el('a', { href: profileHref(profile.username, true) }, 'Choose a username'), ' before you ' + what + '.']);
+    if (reason === 'banned') return el('p', { class: 'forum-msg forum-gate' }, 'Your account has been suspended, so you can’t ' + what + '.');
+    return null;
+  }
+
   window.Forum = {
     db: db,
     config: cfg,
@@ -320,6 +368,10 @@
     loginHref: loginHref,
     signOut: signOut,
     authError: authError,
+    dbError: dbError,
+    counter: counter,
+    postingBlocker: postingBlocker,
+    blockedNote: blockedNote,
     USERNAME_RE: USERNAME_RE,
     renderAuthSlot: renderAuthSlot
   };
