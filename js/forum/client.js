@@ -115,6 +115,76 @@
 
   var OFFLINE = 'The forum can’t be reached right now. Please try again in a moment.';
 
+  // ---------- links, excerpts, page meta, paging ----------
+
+  // Link to a member's profile (falls back to plain text if the profile is missing)
+  function userLink(profile) {
+    if (!profile || !profile.username) return el('span', { class: 'forum-muted' }, 'deleted member');
+    return el('a', { href: '/forum/profile/?u=' + encodeURIComponent(profile.username), class: 'forum-user' }, profile.username);
+  }
+
+  function topicHref(id, page, hash) {
+    return '/forum/topic/?id=' + encodeURIComponent(id) + (page > 1 ? '&page=' + page : '') + (hash || '');
+  }
+
+  // One-line excerpt of member text (plain string, safe to put in textContent)
+  function excerpt(text, max) {
+    var s = String(text || '').replace(/\s+/g, ' ').trim();
+    return s.length > max ? s.slice(0, max - 1).replace(/\s+\S*$/, '') + '…' : s;
+  }
+
+  // Set <title>, meta description and the visible breadcrumb from the data
+  function setPage(opts) {
+    if (opts.title) document.title = opts.title + ' | Forum | Rob Watt';
+    if (opts.description) {
+      var m = document.querySelector('meta[name="description"]');
+      if (m) m.setAttribute('content', excerpt(opts.description, 155));
+    }
+    if (opts.heading !== undefined) {
+      var h = document.querySelector('.forum-title');
+      if (h) h.textContent = opts.heading;
+    }
+    if (opts.crumbs) {
+      var nav = document.querySelector('.forum-crumbs');
+      if (nav) {
+        nav.textContent = '';
+        nav.appendChild(el('a', { href: '/forum/' }, 'forum'));
+        opts.crumbs.forEach(function (c) {
+          nav.appendChild(el('span', { 'aria-hidden': 'true' }, '/'));
+          nav.appendChild(c.href ? el('a', { href: c.href }, c.text) : el('span', null, c.text));
+        });
+      }
+    }
+  }
+
+  function currentPage() {
+    var p = parseInt(param('page'), 10);
+    return p > 0 ? p : 1;
+  }
+
+  // "← newer · page 2 of 5 · older →" style pager; makeHref(n) builds each link
+  function pager(page, totalPages, makeHref) {
+    if (totalPages <= 1) return null;
+    var nav = el('nav', { class: 'forum-pager', 'aria-label': 'Pages' });
+    nav.appendChild(page > 1 ? el('a', { href: makeHref(page - 1), rel: 'prev' }, '← previous') : el('span', { class: 'forum-muted' }, '← previous'));
+    nav.appendChild(el('span', null, 'page ' + page + ' of ' + totalPages));
+    nav.appendChild(page < totalPages ? el('a', { href: makeHref(page + 1), rel: 'next' }, 'next →') : el('span', { class: 'forum-muted' }, 'next →'));
+    return nav;
+  }
+
+  // Column lists for queries. topics/replies each have more than one link to
+  // profiles, so the foreign key is named to say which one we mean.
+  var SELECT = {
+    topicRow: 'id, title, is_pinned, is_locked, reply_count, created_at, last_post_at, ' +
+              'author:profiles!topics_author_id_fkey(username, display_name), ' +
+              'last:profiles!topics_last_post_by_fkey(username, display_name)',
+    reply:    'id, topic_id, body, created_at, edited_at, is_hidden, ' +
+              'author:profiles!replies_author_id_fkey(username, display_name)'
+  };
+
+  var REPLIES_PER_PAGE = 30;
+  var TOPICS_PER_PAGE = 25;
+
   // ---------- auth (filled out in Phase 3) ----------
 
   function getSession() {
@@ -142,6 +212,15 @@
     avatar: avatar,
     message: message,
     OFFLINE: OFFLINE,
+    userLink: userLink,
+    topicHref: topicHref,
+    excerpt: excerpt,
+    setPage: setPage,
+    currentPage: currentPage,
+    pager: pager,
+    SELECT: SELECT,
+    REPLIES_PER_PAGE: REPLIES_PER_PAGE,
+    TOPICS_PER_PAGE: TOPICS_PER_PAGE,
     getSession: getSession,
     renderAuthSlot: renderAuthSlot
   };
