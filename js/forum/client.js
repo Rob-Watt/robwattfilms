@@ -185,18 +185,108 @@
   var REPLIES_PER_PAGE = 30;
   var TOPICS_PER_PAGE = 25;
 
-  // ---------- auth (filled out in Phase 3) ----------
+  // ---------- auth ----------
+
+  // New accounts start with a placeholder like user_ab12cd34 until they pick one
+  var PLACEHOLDER_RE = /^user_[0-9a-f]{8}$/;
+  var USERNAME_RE = /^[a-z0-9_]{3,24}$/;
 
   function getSession() {
     return db ? db.auth.getSession().then(function (r) { return r.data.session; }) : Promise.resolve(null);
   }
 
+  // The signed-in member's profile (or null). Cached until sign-in/out.
+  var mePromise = null;
+  function me() {
+    if (!mePromise) {
+      mePromise = getSession().then(function (session) {
+        if (!session) return null;
+        return db.from('profiles').select('id, username, display_name, bio, role, is_banned, created_at')
+          .eq('id', session.user.id).maybeSingle()
+          .then(function (r) {
+            if (r.error) { console.error('Forum: could not load your profile', r.error); return null; }
+            return r.data ? Object.assign(r.data, { email: session.user.email }) : null;
+          });
+      });
+    }
+    return mePromise;
+  }
+
+  function needsUsername(profile) {
+    return !!(profile && PLACEHOLDER_RE.test(profile.username));
+  }
+
+  function profileHref(username, setup) {
+    return '/forum/profile/?u=' + encodeURIComponent(username) + (setup ? '&setup=1' : '');
+  }
+
+  // Where to go after signing in: pick a username first, otherwise back to `next`
+  function afterSignIn(next) {
+    return me().then(function (profile) {
+      if (profile && needsUsername(profile)) return profileHref(profile.username, true);
+      return safeNext(next);
+    });
+  }
+
+  // Only allow returning to pages inside the forum (prevents open redirects)
+  function safeNext(next) {
+    return next && /^\/forum\/[^\/]/.test(next) && next.indexOf('//') === -1 ? next : '/forum/';
+  }
+
+  function loginHref() {
+    var here = window.location.pathname + window.location.search;
+    return '/forum/login/' + (here.indexOf('/forum/login/') === 0 ? '' : '?next=' + encodeURIComponent(here));
+  }
+
+  function signOut() {
+    return db.auth.signOut().then(function () { window.location.href = '/forum/'; });
+  }
+
   // Header slot on forum pages: "sign in" or the member's name + "sign out"
   function renderAuthSlot() {
     var slot = document.querySelector('[data-forum-auth]');
-    if (!slot) return;
-    slot.textContent = '';
-    slot.appendChild(el('a', { href: '/forum/login/' }, 'sign in'));
+    if (!slot || !db) return;
+    me().then(function (profile) {
+      slot.textContent = '';
+      if (!profile) {
+        slot.appendChild(el('a', { href: loginHref() }, 'sign in'));
+        return;
+      }
+      if (needsUsername(profile)) {
+        slot.appendChild(el('a', { href: profileHref(profile.username, true), class: 'forum-attention' }, 'choose a username'));
+      } else {
+        slot.appendChild(el('a', { href: profileHref(profile.username) }, profile.username));
+      }
+      slot.appendChild(document.createTextNode(' · '));
+      var out = el('a', { href: '#' }, 'sign out');
+      out.addEventListener('click', function (e) { e.preventDefault(); signOut(); });
+      slot.appendChild(out);
+    });
+  }
+
+  // Keep the header in step if the member signs in/out in another tab
+  if (db) {
+    db.auth.onAuthStateChange(function (event) {
+      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'USER_UPDATED') {
+        mePromise = null;
+        if (document.readyState !== 'loading') renderAuthSlot();
+      }
+    });
+  }
+
+  // Turn Supabase auth errors into plain language
+  function authError(err) {
+    var m = String((err && err.message) || err || '').toLowerCase();
+    if (m.indexOf('invalid login credentials') > -1) return 'That email and password don’t match.';
+    if (m.indexOf('email not confirmed') > -1) return 'Please confirm your email first — check your inbox for the link.';
+    if (m.indexOf('already registered') > -1) return 'There’s already an account with that email. Sign in instead.';
+    if (m.indexOf('captcha') > -1) return 'The spam check didn’t go through. Please tick it again and retry.';
+    if (m.indexOf('rate limit') > -1 || m.indexOf('too many') > -1) return 'Too many attempts. Please wait a few minutes and try again.';
+    if (m.indexOf('signups not allowed') > -1 || m.indexOf('otp_disabled') > -1) return 'No account found for that email. Create an account first.';
+    if (m.indexOf('password') > -1 && m.indexOf('least') > -1) return 'Please use a longer password (at least 8 characters).';
+    if (m.indexOf('same password') > -1 || m.indexOf('different from the old') > -1) return 'Please choose a password you haven’t used here before.';
+    if (m.indexOf('failed to fetch') > -1 || m.indexOf('network') > -1) return OFFLINE;
+    return 'Something went wrong: ' + ((err && err.message) || 'please try again.');
   }
 
   window.Forum = {
@@ -222,6 +312,15 @@
     REPLIES_PER_PAGE: REPLIES_PER_PAGE,
     TOPICS_PER_PAGE: TOPICS_PER_PAGE,
     getSession: getSession,
+    me: me,
+    needsUsername: needsUsername,
+    profileHref: profileHref,
+    afterSignIn: afterSignIn,
+    safeNext: safeNext,
+    loginHref: loginHref,
+    signOut: signOut,
+    authError: authError,
+    USERNAME_RE: USERNAME_RE,
     renderAuthSlot: renderAuthSlot
   };
 

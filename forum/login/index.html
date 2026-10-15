@@ -39,8 +39,78 @@
 
     <h1 class="forum-title">sign in</h1>
 
-    <div id="forum-root" aria-live="polite">
-      <p class="forum-msg">accounts arrive in phase 3.</p>
+    <div id="forum-root" class="forum-auth">
+      <div class="forum-tabs" role="tablist" aria-label="Account">
+        <button type="button" role="tab" id="tab-signin" aria-controls="panel-signin" aria-selected="true">sign in</button>
+        <button type="button" role="tab" id="tab-signup" aria-controls="panel-signup" aria-selected="false">create account</button>
+        <button type="button" role="tab" id="tab-forgot" aria-controls="panel-forgot" aria-selected="false">forgot password</button>
+      </div>
+
+      <p class="forum-msg" id="auth-status" role="status" aria-live="polite"></p>
+
+      <!-- Sign in -->
+      <section class="forum-panel" id="panel-signin" role="tabpanel" aria-labelledby="tab-signin">
+        <form class="forum-form" id="form-signin" novalidate>
+          <label for="signin-email">email</label>
+          <input id="signin-email" name="email" type="email" autocomplete="email" required>
+          <label for="signin-password">password</label>
+          <input id="signin-password" name="password" type="password" autocomplete="current-password">
+          <div class="forum-captcha" data-captcha></div>
+          <div class="forum-form-actions">
+            <button type="submit" class="forum-button" data-action="password">sign in</button>
+            <button type="submit" class="forum-button forum-button--quiet" data-action="magic">email me a sign-in link instead</button>
+          </div>
+          <p class="forum-help">The link option skips the password: we email you a one-time link that signs you in.</p>
+        </form>
+      </section>
+
+      <!-- Create account -->
+      <section class="forum-panel" id="panel-signup" role="tabpanel" aria-labelledby="tab-signup" hidden>
+        <form class="forum-form" id="form-signup" novalidate>
+          <label for="signup-email">email</label>
+          <input id="signup-email" name="email" type="email" autocomplete="email" required>
+          <label for="signup-password">password <span class="forum-muted">(at least 8 characters)</span></label>
+          <input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="8" required>
+          <label class="forum-check">
+            <input type="checkbox" name="agree" required>
+            <span>I agree to the <a href="/forum/rules/" target="_blank" rel="noopener">forum rules and privacy note</a>.</span>
+          </label>
+          <div class="forum-captcha" data-captcha></div>
+          <div class="forum-form-actions">
+            <button type="submit" class="forum-button">create account</button>
+          </div>
+          <p class="forum-help">We store your email only to sign you in and never share it. You&rsquo;ll pick a username after confirming your email.</p>
+        </form>
+      </section>
+
+      <!-- Forgot password -->
+      <section class="forum-panel" id="panel-forgot" role="tabpanel" aria-labelledby="tab-forgot" hidden>
+        <form class="forum-form" id="form-forgot" novalidate>
+          <label for="forgot-email">email</label>
+          <input id="forgot-email" name="email" type="email" autocomplete="email" required>
+          <div class="forum-captcha" data-captcha></div>
+          <div class="forum-form-actions">
+            <button type="submit" class="forum-button">email me a reset link</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Set a new password (after clicking the reset link) -->
+      <section class="forum-panel" id="panel-newpass" hidden>
+        <form class="forum-form" id="form-newpass" novalidate>
+          <label for="newpass-password">new password <span class="forum-muted">(at least 8 characters)</span></label>
+          <input id="newpass-password" name="password" type="password" autocomplete="new-password" minlength="8" required>
+          <div class="forum-form-actions">
+            <button type="submit" class="forum-button">save new password</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Already signed in -->
+      <section class="forum-panel" id="panel-signedin" hidden>
+        <p>You&rsquo;re signed in as <a id="signedin-name" href="#"></a>.</p>
+        <p><a href="/forum/">Go to the forum</a> &middot; <a href="#" id="signedin-out">sign out</a></p>
+      </section>
     </div>
   </main>
 
@@ -58,5 +128,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="/js/forum/config.js"></script>
   <script src="/js/forum/client.js"></script>
+  <script src="/js/forum/login.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&amp;onload=forumTurnstileReady" async defer></script>
 </body>
 </html>
