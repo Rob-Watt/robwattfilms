@@ -60,6 +60,7 @@
       var flags = [];
       if (t.is_pinned) flags.push(el('span', { class: 'forum-flag' }, 'pinned'));
       if (t.is_locked) flags.push(el('span', { class: 'forum-flag' }, 'locked'));
+      if (t.is_hidden) flags.push(el('span', { class: 'forum-flag forum-flag--warn' }, 'hidden'));
       tbody.appendChild(el('tr', { class: t.is_pinned ? 'is-pinned' : null }, [
         el('td', { class: 'forum-cell-main' }, [flags, el('a', { href: F.topicHref(t.id), class: 'forum-cat-name' }, t.title)].flat()),
         el('td', { class: 'forum-by', 'data-label': 'started by' }, [F.userLink(t.author), el('br'), F.timeEl(t.created_at)]),

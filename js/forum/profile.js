@@ -72,6 +72,7 @@
     ]));
 
     if (isOwner) root.appendChild(editForm(p, mine));
+    else if (F.isMod(mine) && p.role !== 'admin') root.appendChild(modTools(p, mine));
 
     var activity = el('div', { class: 'forum-recent' });
     root.appendChild(activity);
@@ -130,7 +131,7 @@
             if (c === '23505') say('That username is taken. Please try another.', 'error');
             else if (c === '23514') say('That doesn’t fit the username rules (3–24 lowercase letters, numbers, _).', 'error');
             else if (c === 'PGRST116') say('You can only edit your own profile.', 'error');
-            else say('Couldn’t save: ' + res.error.message, 'error');
+            else say(F.dbError(res.error), 'error');
             return;
           }
           // Reload so the header and address bar use the new name
@@ -141,6 +142,38 @@
     if (F.param('saved')) setTimeout(function () { status.textContent = 'Saved.'; status.className = 'forum-msg forum-msg--ok'; }, 0);
     if (setup) setTimeout(function () { uInput.focus(); }, 0);
     return form;
+  }
+
+  // ---------- moderator tools (ban; admins can also appoint moderators) ----------
+  function modTools(p, mine) {
+    var status = el('span', { class: 'forum-msg', role: 'status', 'aria-live': 'polite' });
+    var box = el('div', { class: 'forum-mod-tools' }, el('span', { class: 'forum-mod-label' }, 'mod:'));
+
+    function button(text, changes, confirmText) {
+      var b = el('button', { type: 'button', class: 'forum-linkbutton' }, text);
+      b.addEventListener('click', function () {
+        if (confirmText && !window.confirm(confirmText)) return;
+        b.disabled = true;
+        status.textContent = ' saving…';
+        status.className = 'forum-msg';
+        F.db.from('profiles').update(changes).eq('id', p.id).select('id').single().then(function (res) {
+          if (res.error) { b.disabled = false; status.textContent = ' ' + F.dbError(res.error); status.className = 'forum-msg forum-msg--error'; return; }
+          window.location.reload();
+        });
+      });
+      box.appendChild(document.createTextNode(' '));
+      box.appendChild(b);
+    }
+
+    if (p.is_banned) button('unban', { is_banned: false });
+    else button('ban', { is_banned: true }, 'Ban @' + p.username + '? They won’t be able to post, reply, edit or report until unbanned.');
+
+    if (mine.role === 'admin') {
+      if (p.role === 'moderator') button('remove moderator', { role: 'member' });
+      else button('make moderator', { role: 'moderator' }, 'Make @' + p.username + ' a moderator? They’ll be able to hide, delete, lock and move posts and ban members.');
+    }
+    box.appendChild(status);
+    return box;
   }
 
   // ---------- recent topics / replies ----------

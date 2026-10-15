@@ -175,7 +175,7 @@
   // Column lists for queries. topics/replies each have more than one link to
   // profiles, so the foreign key is named to say which one we mean.
   var SELECT = {
-    topicRow: 'id, title, is_pinned, is_locked, reply_count, created_at, last_post_at, ' +
+    topicRow: 'id, title, is_pinned, is_locked, is_hidden, reply_count, created_at, last_post_at, ' +
               'author:profiles!topics_author_id_fkey(username, display_name), ' +
               'last:profiles!topics_last_post_by_fkey(username, display_name)',
     reply:    'id, topic_id, body, created_at, edited_at, is_hidden, ' +
@@ -210,6 +210,10 @@
       });
     }
     return mePromise;
+  }
+
+  function isMod(profile) {
+    return !!(profile && (profile.role === 'moderator' || profile.role === 'admin'));
   }
 
   function needsUsername(profile) {
@@ -257,6 +261,10 @@
       } else {
         slot.appendChild(el('a', { href: profileHref(profile.username) }, profile.username));
       }
+      if (isMod(profile)) {
+        slot.appendChild(document.createTextNode(' · '));
+        slot.appendChild(el('a', { href: '/forum/mod/' }, 'mod queue'));
+      }
       slot.appendChild(document.createTextNode(' · '));
       var out = el('a', { href: '#' }, 'sign out');
       out.addEventListener('click', function (e) { e.preventDefault(); signOut(); });
@@ -295,6 +303,9 @@
     var m = String(err.message || '');
     if (/posting too fast/i.test(m)) return 'You’re posting too fast. Please wait about 20 seconds and try again.';
     if (/only moderators/i.test(m)) return 'Only moderators can do that.';
+    if (/only admins/i.test(m)) return 'Only admins can change member roles.';
+    if (/be banned from the site/i.test(m)) return 'Admins can\u2019t be banned.';
+    if (/username is reserved/i.test(m)) return 'That username is reserved. Please choose another.';
     if (err.code === '42501' || /row-level security|permission denied/i.test(m))
       return 'You don’t have permission to do that. Make sure you’re signed in — and the topic may be locked, or your account may be suspended.';
     if (err.code === '23514' || /check constraint/i.test(m)) {
@@ -362,6 +373,7 @@
     getSession: getSession,
     me: me,
     needsUsername: needsUsername,
+    isMod: isMod,
     profileHref: profileHref,
     afterSignIn: afterSignIn,
     safeNext: safeNext,

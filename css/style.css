@@ -651,6 +651,20 @@ tr.is-pinned td { background: #fafafa; }
 .forum-reply { max-width: 760px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--ink); }
 .forum-gate a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
+/* Moderation */
+.forum-mod-actions { margin-left: 16px; }
+.forum-mod-label { color: #b3261e; }
+.forum-mod-tools { margin-top: 24px; color: var(--muted); }
+.forum-tabs--links a { padding: 0 0 10px; margin-bottom: -1px; color: var(--muted); border-bottom: 2px solid transparent; }
+.forum-tabs--links a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--ink); }
+.forum-reports { max-width: 760px; }
+.forum-report-card { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.forum-report-card .forum-list-meta { margin: 0; }
+.forum-report-reason { margin: 8px 0; font-weight: 700; text-transform: none; }
+.forum-report-quote { margin: 0; padding: 8px 0 8px 14px; border-left: 2px solid var(--line); color: var(--muted); text-transform: none; }
+.forum-report-quote strong { display: block; color: var(--ink); }
+.forum-move { margin-top: 12px; }
+
 @media (max-width: 720px) {
   .forum-recent { grid-template-columns: 1fr; gap: 32px; }
 
