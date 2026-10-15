@@ -1,0 +1,7 @@
+# GitHub Pages builds this site with Jekyll. Everything listed here stays in
+# the GitHub repository (backed up, with history) but is NOT published on
+# robwattfilms.com. Never put passwords or secret keys in any file.
+exclude:
+  - README.md
+  - supabase/
+  - scripts/
