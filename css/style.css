@@ -378,7 +378,8 @@ main { padding: 8px var(--gutter) 64px; }
 }
 
 @media (max-width: 640px) {
-  .menu-toggle { display: block; }
+  /* keep the menu/close button above the full-screen menu panel */
+  .menu-toggle { display: block; position: relative; z-index: 70; }
 
   .nav {
     position: fixed;

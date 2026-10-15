@@ -7,10 +7,20 @@
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.querySelector('.nav');
   if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
+    var setMenu = function (open) {
+      nav.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', open);
       toggle.textContent = open ? 'close' : 'menu';
+    };
+    toggle.addEventListener('click', function () {
+      setMenu(!nav.classList.contains('is-open'));
+    });
+    // Tap the empty space around the links, or press Escape, to close
+    nav.addEventListener('click', function (e) {
+      if (e.target === nav) setMenu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
     });
   }
 
