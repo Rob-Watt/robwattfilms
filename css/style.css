@@ -665,6 +665,12 @@ tr.is-pinned td { background: #fafafa; }
 .forum-report-quote strong { display: block; color: var(--ink); }
 .forum-move { margin-top: 12px; }
 
+/* Search */
+.forum-search-results { max-width: 760px; }
+.forum-search-results mark { background: #fff2a8; color: inherit; padding: 0 1px; }
+.forum-search-tips ul { padding-left: 20px; }
+.forum-search-tips code { font-size: 13px; padding: 1px 4px; background: #f3f3f3; text-transform: none; }
+
 @media (max-width: 720px) {
   .forum-recent { grid-template-columns: 1fr; gap: 32px; }
 
