@@ -671,6 +671,14 @@ tr.is-pinned td { background: #fafafa; }
 .forum-search-tips ul { padding-left: 20px; }
 .forum-search-tips code { font-size: 13px; padding: 1px 4px; background: #f3f3f3; text-transform: none; }
 
+/* Plain thread pages (forum/t/) */
+.forum-join { max-width: 760px; margin-top: 32px; display: grid; gap: 10px; justify-items: start; }
+.forum-join .forum-muted a { text-decoration: underline; text-underline-offset: 3px; }
+.forum-archive { max-width: 760px; margin-top: 32px; }
+.forum-archive h2 { font-size: 15px; margin: 0 0 4px; padding-bottom: 8px; border-bottom: 1px solid var(--ink); text-transform: none; }
+.forum-archive-link { margin-top: 40px; color: var(--muted); }
+.forum-archive-link a { text-decoration: underline; text-underline-offset: 3px; }
+
 @media (max-width: 720px) {
   .forum-recent { grid-template-columns: 1fr; gap: 32px; }
 

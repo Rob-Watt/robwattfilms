@@ -97,8 +97,9 @@
 
   function initials(profile) {
     var name = (profile && (profile.display_name || profile.username)) || '?';
-    var parts = name.replace(/_/g, ' ').trim().split(/\s+/);
-    var s = parts.length > 1 ? parts[0][0] + parts[parts.length - 1][0] : name.slice(0, 2);
+    var parts = name.replace(/[^\p{L}\p{N}]+/gu, ' ').trim().split(/\s+/);
+    if (!parts[0]) return '?';
+    var s = parts.length > 1 ? parts[0][0] + parts[parts.length - 1][0] : parts[0].slice(0, 2);
     return s.toUpperCase();
   }
 
