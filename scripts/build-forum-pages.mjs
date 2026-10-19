@@ -246,7 +246,7 @@ ${s.items.map(t => `        <li><a href="/forum/t/${t._dir}/" class="forum-list-
 
 const indexHtml = page({
   title: 'All threads | Rob Watt Films Forum',
-  description: 'Every discussion on the Rob Watt Films forum, by section: aerial cinematography, camera, lighting, directing, post, film and the Getting Made Podcast.',
+  description: 'Every discussion on the Rob Watt Films forum, by section: aerial cinematography, camera, lighting, directing, screenwriting, post, film and the Getting Made Podcast.',
   canonical: `${SITE}/forum/t/`,
   jsonld: null,
   heading: 'all threads',

@@ -389,12 +389,13 @@ insert into public.categories (slug, name, description, position) values
   ('camera',      'Camera',               'Cameras, lenses, formats and how to choose them.',                  2),
   ('lighting',    'Lighting',             'Lighting, lamps and shaping light on set.',                         3),
   ('directing',   'Directing',            'Directing, working with actors and telling the story.',             4),
-  ('post-color',  'Post & Color',         'Editing, the grade, VFX and finishing.',                            5),
-  ('set-talk',    'Set Talk',             'Life on set, crews, budgets and getting the day.',                  6),
-  ('film-talk',   'Film Talk',            'Films old and new that are worth talking about.',                   7),
-  ('podcast',     'Getting Made Podcast', 'Episode discussion and guest suggestions.',                         8),
-  ('ask-rob',     'Ask Rob',              'Questions for Rob about his work and process.',                     9),
-  ('site-news',   'Site News',            'Forum announcements, feedback and help.',                          10);
+  ('screenwriting','Screenwriting',       'Writing for the screen: story, structure, drafts and getting scripts made.', 5),
+  ('post-color',  'Post & Color',         'Editing, the grade, VFX and finishing.',                            6),
+  ('set-talk',    'Set Talk',             'Life on set, crews, budgets and getting the day.',                  7),
+  ('film-talk',   'Film Talk',            'Films old and new that are worth talking about.',                   8),
+  ('podcast',     'Getting Made Podcast', 'Episode discussion and guest suggestions.',                         9),
+  ('ask-rob',     'Ask Rob',              'Questions for Rob about his work and process.',                    10),
+  ('site-news',   'Site News',            'Forum announcements, feedback and help.',                          11);
 
 
 -- ---------------------------------------------------------------------
