@@ -356,6 +356,7 @@ main { padding: 8px var(--gutter) 64px; }
 .post-list p { margin: 0; color: var(--muted); text-transform: none; }
 
 .post-meta { color: var(--muted); margin: -12px 0 32px; text-transform: lowercase; }
+.post-dek { margin: -16px 0 32px; color: var(--muted); font-size: 16px; line-height: 1.6; }
 
 /* FAQ blocks (helps answer engines) */
 .faq dt { font-weight: 700; margin-top: 20px; }
